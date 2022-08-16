@@ -27,29 +27,6 @@ export default class ProductCardHome extends Component {
     // this.props.getProduct();
   };
 
-  //cart CRUD
-  getCart = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_HEROKU}/cart`);
-    this.setState({
-      cart: res.data,
-    });
-    // console.log(this.state.cart);
-  };
-
-  createCart = async (e) => {
-    e.preventDefault();
-    const newCart = {
-      title: this.props.itemData.title,
-      description: this.props.itemData.description,
-      price: this.props.itemData.price,
-      imgURL: this.props.itemData.imgURL,
-    };
-    await axios.post(`${process.env.REACT_APP_HEROKU}/cart`, { newCart });
-    this.getCart();
-    // console.log(newCart)
-
-
-  };
 
   render() {
     return (
@@ -57,17 +34,18 @@ export default class ProductCardHome extends Component {
     
         <Card className="card">
 
-        <Card.Img className="cardImg" src={this.props.itemData.imgURL}/>
+          <Card.Img className="cardImg" src={this.props.itemData.imgURL} onClick={this.props.showModal}/>
 
-        <Card.Body className="cardBody" >
+          <Card.Body className="cardBody" >
             <Card.Title >{this.props.itemData.title}</Card.Title>
             <Card.Text >{this.props.itemData.description}</Card.Text>
             <Card.Text >{this.props.itemData.price} JD</Card.Text>
-            <Button className="cartBtn" onClick={this.favClick}><i class="far fa-heart"></i> {this.state.favClickCounter}</Button>
-            <Button onClick={this.createCart} className="cartBtn">Add to Cart</Button>  
+            <Button className="cartBtn" onClick={this.favClick}><i className="far fa-heart"></i> {this.state.favClickCounter}</Button>
+            <Button onClick={this.props.createCart} className="cartBtn">Add to Cart</Button>  
           </Card.Body>
 
         </Card>
+
       </div>
     );
   }

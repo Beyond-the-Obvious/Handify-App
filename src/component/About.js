@@ -68,29 +68,27 @@ const About = () => {
 
   const renderCard = (card, index) => {
     return (
-      <div className="aboutPage">
+      <div className="aboutPage" key={index}> 
         <Card style={{ width: "22rem"}} key={index} className="box" >
-          <Card.Img variant="top" src={card.image} style={{ borderRadius: "50%", padding: "2%"}} className="eachImg" class="shadow " />
+          <Card.Img variant="top" src={card.image} style={{ borderRadius: "50%", padding: "2%"}} className="eachImg, shadow"/>
+
           <Card.Body>
             <Card.Title>{card.title}</Card.Title>
             <Card.Text>{card.text}</Card.Text>
             <Card.Text>{card.description}</Card.Text>
 
             <Card.Link href={card.gitHub} className="socialIcons">
-              <i class="fab fa-github"></i>
+              <i className="fab fa-github"></i>
             </Card.Link>
 
             <Card.Link href={card.linkedin} className="socialIcons">
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </Card.Link>
 
             <Card.Link href={card.linkedin} className="socialIcons">
-              <i class="fab fa-facebook"></i>
+              <i className="fab fa-facebook"></i>
             </Card.Link>
 
-            {/* <Card.Link href="#">linkedin</Card.Link> */}
-            {/* <Card.Link href="#">Facebook</Card.Link> */}
-            {/* <Button variant="primary">Go somewhere</Button> */}
           </Card.Body>
         </Card>
       </div>
@@ -100,11 +98,7 @@ const About = () => {
   return (
     <div className="login-body">
       <h1 className='contactTxt' >Applicaiton Idea</h1>
-      
 
-      {/* <img src="https://eunimart.com/wp-content/uploads/2021/10/Guide-on-selling.jpeg" alt="Pineapple" className="aboutImg" width="700px" height="500px" ></img>
-      <h4 className="aboutText">Our Application idea is to create an application where small businesses and upcoming individuals can share their story/products/creations/items (all the items must be locally handmade to support small businesses only) in one platform, it will give them the ability to create an account, choose which category they want to take part in such as food/accessories/art/clothes/any product and even NFTS, and place their items to be bought by other people. It will have a main home page where the user can search for an item to buy, you can review stuff and place comments. there will be a profile page where the user can (create, read, update, delete) do anything else basically.</h4>
-        */}
       <Row className="rowAbout">
       <Col>
 
@@ -121,7 +115,6 @@ const About = () => {
            <Card className="csddd" style={{ width: "40%"}} >
           <Col className="aboutText">
           <Card.Body className="aboutText" style={{ width: "700px"}}>  
-            {/* <Card.Title>Card Title</Card.Title> */}
             <Card.Text  >
             Our Application idea is to create an application where small businesses and upcoming individuals can share their story/products/creations/items (all the items must be locally handmade to support small businesses only) in one platform, it will give them the ability to create an account, choose which category they want to take part in such as food/accessories/art/clothes/any product and even NFTS, and place their items to be bought by other people. It will have a main home page where the user can search for an item to buy, you can review stuff and place comments. there will be a profile page where the user can (create, read, update, delete) do anything else basically.
             </Card.Text>

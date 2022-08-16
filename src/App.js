@@ -2,17 +2,17 @@ import React from "react";
 import Footer from "./component/Footer";
 import Profile from "./component/Profile";
 import About from "./component/About";
-import Home from "./component/Home";
+import NavBar from "./component/NavBar";
 import Contact from  "./component/Contact";
 import Cart from "./component/Cart";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import Description from "./component/Description";
 import Homepage from "./component/HomePage"
 import Log from "./component/login"
 import Register from "./component/register"
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 
@@ -24,17 +24,11 @@ function App() {
       <div className="App">
        
       <Router>
-        <Home/>
+        <NavBar/>
+        
         <Routes>
-      
-        {/* <Route exact path="/" element={user && user._id ? <Homepage setLoginUser={setLoginUser}  /> : <Log setLoginUser={setLoginUser}/>}></Route> */}
-
-        <Route exact path="/Profile" element={user && user._id ? <Profile setLoginUser={setLoginUser}  /> : <Log setLoginUser={setLoginUser}/>}></Route>
-
-        {/* <Route exact path="/Home" element={user && user._id ? <Home setLoginUser={setLoginUser}  /> : <Log setLoginUser={setLoginUser}/>}></Route> */}
-
-
-          
+    
+          <Route exact path="/Profile" element={user && user._id ? <Profile setLoginUser={setLoginUser}  /> : <Log setLoginUser={setLoginUser}/>}></Route>
           <Route exact path="/login" element={<Log setLoginUser={setLoginUser}/>}></Route>
           <Route exact path="/register" element={<Register />}></Route>
           <Route exact path="/" element={<Homepage />}></Route>
@@ -42,8 +36,9 @@ function App() {
           <Route exact path="/contact" element={<Contact />}></Route>
           <Route exact path="/cart" element={<Cart />}></Route>
 
-           {/* <Route exact path="/Profile" element={<Profile />}></Route> */}
-          </Routes>
+        </Routes>
+
+          <Description />
           <Footer />
       </Router>
     </div>

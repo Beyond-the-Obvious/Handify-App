@@ -38,14 +38,7 @@ export default class Cart extends Component {
     console.log("we are inside componentDidMount");
     this.getCart();
   }
-  handleIncrement() {
-    this.setState({
-      cart: (cart) =>
-        cart.map((item) =>
-          item.id === item.id ? { ...item, price: item.price + 1 } : item
-        ),
-    });
-  }
+
 
   render() {
     return (

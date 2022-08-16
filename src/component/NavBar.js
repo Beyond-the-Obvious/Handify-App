@@ -13,7 +13,7 @@ import {
 } from "mdb-react-ui-kit";
 import logo from '../assets/newlogo.png';
 
-export default class Home extends React.Component {
+export default class NavBar extends React.Component {
 
   render() {
   return (
