@@ -1,8 +1,11 @@
 import React from "react";
 import axios from "axios";
-import ProductCardHome from "../component/ProductCardHome";
-import Row from "react-bootstrap/Row";
 import "../css/homepage.css";
+import LandingPage from "./LandingPage";
+
+
+
+import ProductModal from "./ProductModal";
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -24,15 +27,18 @@ export default class HomePage extends React.Component {
     this.getProduct();
   }
 
+  
+
   render() {
     return (
       <div className="login-body">
+        <LandingPage/>
         <h1 className="contactTxt">Check out our new Products!</h1>
 
         <div className="cards">
           {this.state.handify.map((item, idx) => (
             <div key={idx}>
-              <ProductCardHome itemData={item} getProduct={this.getProduct} />
+              <ProductModal itemData={item} getProduct={this.getProduct} createCart={this.createCart} />
             </div>
           ))}
         </div>
