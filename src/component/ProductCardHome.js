@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 
-import "../css/homepage.css";
+import "../css/homePage.css";
 
 export default class ProductCardHome extends Component {
   constructor(props) {
@@ -30,9 +30,9 @@ export default class ProductCardHome extends Component {
 
   render() {
     return (
-      <div className="cardContainer">
+      <div className="productsCards mb-5">
     
-        <Card className="card">
+        <Card className="productsCards mb-5">
 
           <Card.Img className="cardImg" src={this.props.itemData.imgURL} onClick={this.props.showModal}/>
 

@@ -51,7 +51,6 @@ export default class Footer extends React.Component {
     </MDBFooter>
     <hr></hr>
 
-
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
               <img src={ logo } alt="Logo" className="logoImg" />
               <p>Our website is a perfect place to support small buisness owners and provide the users with unique hand-made peices .</p>
@@ -83,10 +82,6 @@ export default class Footer extends React.Component {
 
           </MDBRow>
 
-
-
-
-
         </MDBContainer>
       </section>
           <hr></hr>
@@ -106,7 +101,7 @@ export default class Footer extends React.Component {
         </section>
       
 
-      <div className="text-center p-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}>
+      <div className="text-center p-4" style={{ backgroundColor: "#576F72", color:"#F0EBE3"}}>
         © 2022 Copyright | <a className="text-reset fw-bold" href="/">Handify</a>
       </div>
     </MDBFooter>
