@@ -6,16 +6,52 @@ import {
   MDBRow,
   MDBCol,
   MDBIcon,
+  MDBInput,
+  MDBBtn,
 } from "mdb-react-ui-kit";
-import logo from '../assets/handifylogo.png';
+import logo from '../assets/newlogo.png';
+import swal from 'sweetalert';
 
-export default function App() {
+
+export default class Footer extends React.Component {
+
+  onClick = (e) => {
+    e.preventDefault();
+    swal("Thank you for subscribing! ", "Now you can keep up with us🤩");
+  }
+
+  render() {
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
 
       <section className="">
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
+
+          <MDBFooter bgColor='light' className='text-center text-lg-left' >
+      <MDBContainer className='p-4 pb-0'>
+        <form action=''>
+          <MDBRow className='d-flex justify-content-center'>
+            <MDBCol size='auto' className='mb-4 mb-md-0'>
+              <p className='pt-2'>
+                <strong>Sign up for our newsletter</strong>
+              </p>
+            </MDBCol>
+
+            <MDBCol md='5' size='12' className='mb-4 mb-md-0'>
+              <MDBInput type='text' id='form5Example2' label='Enter a valid email address' />
+            </MDBCol>
+
+            <MDBCol size='auto' className='mb-4 mb-md-0'>
+              <MDBBtn onClick={this.onClick} className="cartBtnAdd" >Subscribe</MDBBtn>
+            </MDBCol>
+          </MDBRow>
+        </form>
+      </MDBContainer>
+    </MDBFooter>
+    <hr></hr>
+
+
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
               <img src={ logo } alt="Logo" className="logoImg" />
               <p>Our website is a perfect place to support small buisness owners and provide the users with unique hand-made peices .</p>
@@ -46,6 +82,11 @@ export default function App() {
             </MDBCol>
 
           </MDBRow>
+
+
+
+
+
         </MDBContainer>
       </section>
           <hr></hr>
@@ -70,4 +111,6 @@ export default function App() {
       </div>
     </MDBFooter>
   );
+}
+
 }

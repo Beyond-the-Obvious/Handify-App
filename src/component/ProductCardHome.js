@@ -3,6 +3,8 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 
+import "../css/homepage.css";
+
 export default class ProductCardHome extends Component {
   constructor(props) {
     super(props);
@@ -45,31 +47,28 @@ export default class ProductCardHome extends Component {
     await axios.post(`${process.env.REACT_APP_HEROKU}/cart`, { newCart });
     this.getCart();
     // console.log(newCart)
+
+
   };
 
   render() {
     return (
-      <>
-        <Card style={{ width: "18rem", padding: 10 }}>
-          <Card.Img src={this.props.itemData.imgURL} width="200" />
-          <Card.Body>
-            <Card.Title style={{ color: "black" }}>
-              {this.props.itemData.title}
-            </Card.Title>
-            <Card.Text style={{ color: "black" }}>
-              {this.props.itemData.description}
-            </Card.Text>
-            <Card.Text style={{ color: "black" }}>
-              {this.props.itemData.price} JD
-            </Card.Text>
-            <Button className="cartBtn" onClick={this.favClick}>
-              <span>👍{this.state.favClickCounter}</span>
-            </Button>
+      <div className="cardContainer">
+    
+        <Card className="card">
 
-            <Button onClick={this.createCart} className="cartBtn">Add to Cart</Button>
+        <Card.Img className="cardImg" src={this.props.itemData.imgURL}/>
+
+        <Card.Body className="cardBody" >
+            <Card.Title >{this.props.itemData.title}</Card.Title>
+            <Card.Text >{this.props.itemData.description}</Card.Text>
+            <Card.Text >{this.props.itemData.price} JD</Card.Text>
+            <Button className="cartBtn" onClick={this.favClick}><i class="far fa-heart"></i> {this.state.favClickCounter}</Button>
+            <Button onClick={this.createCart} className="cartBtn">Add to Cart</Button>  
           </Card.Body>
+
         </Card>
-      </>
+      </div>
     );
   }
 }

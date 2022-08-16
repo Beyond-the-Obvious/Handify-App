@@ -11,7 +11,7 @@ import {
   // MDBCollapse,
   MDBBtn,
 } from "mdb-react-ui-kit";
-import logo from '../assets/handifylogo.png';
+import logo from '../assets/newlogo.png';
 
 export default class Home extends React.Component {
 
@@ -20,7 +20,7 @@ export default class Home extends React.Component {
 
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand> <img src={ logo } alt="Logo" className="logoImg" /></MDBNavbarBrand>
+        <MDBNavbarBrand href="/" > <img src={ logo } alt="Logo" className="logoImg" /></MDBNavbarBrand>
         <MDBNavbarToggler
           aria-expanded="false"
           aria-label="Toggle navigation"

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import ProductCardHome from "../component/ProductCardHome";
 import Row from "react-bootstrap/Row";
+import "../css/homepage.css";
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -27,16 +28,14 @@ export default class HomePage extends React.Component {
     return (
       <div className="login-body">
         <h1 className="contactTxt">Check out our new Products!</h1>
-        <Row xs={1} md={4} className="g-4">
+
+        <div className="cards">
           {this.state.handify.map((item, idx) => (
             <div key={idx}>
-        <ProductCardHome  itemData={item} getProduct={this.getProduct}/>
-        </div>
+              <ProductCardHome itemData={item} getProduct={this.getProduct} />
+            </div>
           ))}
-        </Row>
-
-        
-
+        </div>
       </div>
     );
   }
