@@ -4,11 +4,9 @@ import Profile from "./component/Profile";
 import About from "./component/About";
 import Home from "./component/Home";
 import Contact from  "./component/Contact";
+import Cart from "./component/Cart";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-/* import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
- */
-
 
 import Homepage from "./component/HomePage"
 import Log from "./component/login"
@@ -42,7 +40,7 @@ function App() {
           <Route exact path="/" element={<Homepage />}></Route>
           <Route exact path="/About" element={<About />}></Route>
           <Route exact path="/contact" element={<Contact />}></Route>
-          {/* <Route exact path="/cart" element={<Cart />}></Route> */}
+          <Route exact path="/cart" element={<Cart />}></Route>
 
            {/* <Route exact path="/Profile" element={<Profile />}></Route> */}
           </Routes>
