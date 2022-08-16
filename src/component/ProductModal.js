@@ -7,6 +7,8 @@ import ProductCardHome from './ProductCardHome';
 import swal from 'sweetalert';
 import axios from "axios";
 
+import "../css/homePage.css";
+
 
 class ProductModal extends React.Component {
     constructor(props) {
@@ -53,7 +55,7 @@ class ProductModal extends React.Component {
         render() {
           
         return(
-            <>
+            <div className="productsCards mb-5">
 
             <ProductCardHome itemData={this.props.itemData} getProduct={this.props.getProduct} createCart={this.createCart} showModal={() => this.openModal()}/>
       
@@ -79,7 +81,7 @@ class ProductModal extends React.Component {
             <Button onClick={this.createCart} className="cartBtn">Add to Cart</Button>
           </Card.Body>
             </Modal>
-          </>
+          </div>
         )
       
         } 

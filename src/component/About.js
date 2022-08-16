@@ -97,7 +97,7 @@ const About = () => {
 
   return (
     <div className="login-body">
-      <h1 className='contactTxt' >Applicaiton Idea</h1>
+      <h1 className='contactTxt' >Who We Are</h1>
 
       <Row className="rowAbout">
       <Col>
@@ -116,8 +116,10 @@ const About = () => {
           <Col className="aboutText">
           <Card.Body className="aboutText" style={{ width: "700px"}}>  
             <Card.Text  >
-            Our Application idea is to create an application where small businesses and upcoming individuals can share their story/products/creations/items (all the items must be locally handmade to support small businesses only) in one platform, it will give them the ability to create an account, choose which category they want to take part in such as food/accessories/art/clothes/any product and even NFTS, and place their items to be bought by other people. It will have a main home page where the user can search for an item to buy, you can review stuff and place comments. there will be a profile page where the user can (create, read, update, delete) do anything else basically.
-            </Card.Text>
+            We are a team of passionate developers interested in web developing and many other social, economical, political and artistic issues so we try to find solutions and help the community by creating some useful, creative apps.
+            <hr/>
+            Our Application idea is to create an application where small businesses and upcoming individuals can share their story/products/creations/items
+             (all the items must be locally handmade to support small businesses only) in one platform.            </Card.Text>
           </Card.Body>
           </Col>
         </Card>

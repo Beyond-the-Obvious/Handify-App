@@ -1,0 +1,25 @@
+.contactHeader{
+    text-align: start;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #576F72;
+}
+
+.contactContainer{
+    margin: 0 auto;
+    width: 70%;
+}
+
+.contactForm{
+ width: 100%;
+ margin-bottom: 0;
+}
+
+.contactBodyContainer{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contactLogoImg{
+    width:15%
+}
