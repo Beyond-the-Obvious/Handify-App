@@ -47,9 +47,8 @@ export default class Home extends React.Component {
               type="Search"
             />
             <MDBBtn outline>Search</MDBBtn>
-            <MDBNavbarLink></MDBNavbarLink>
-            <MDBNavbarLink></MDBNavbarLink>
-            <MDBNavbarLink href="/cart" className="me-4 text-reset"><MDBIcon fas icon="shopping-cart" /></MDBNavbarLink>
+
+            <MDBNavbarLink href="/cart" className="me-4 text-reset"><MDBIcon fas icon="shopping-cart" /></MDBNavbarLink>            
           </MDBNavbarNav>
         {/* </MDBCollapse> */}
 

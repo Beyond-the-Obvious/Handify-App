@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -34,3 +38,46 @@ code {
 
 
 }
+
+.contactForm {
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  border: solid 1px #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  align-items: center;
+  background-color: white;
+
+}
+
+.contactTxt {
+text-align: center;
+padding-top: 50px;
+padding-bottom: 50px;
+color: #576F72;
+}
+
+.cartBtn {
+  margin-left: 10px;
+  background-color: #576F72 !important;
+}
+
+.cartBtnAdd {
+  margin-left: 10px;
+  background-color: #576F72 !important;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.social{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex ;
+  flex-direction:column;
+  align-items: center; 
+ }
