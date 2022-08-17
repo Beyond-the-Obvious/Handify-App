@@ -8,7 +8,6 @@ import {
   MDBNavbarNav,
   MDBIcon,
   // MDBCollapse,
-  MDBBtn,
 } from "mdb-react-ui-kit";
 import logo from '../assets/newlogo.png';
 
@@ -27,15 +26,12 @@ export default class NavBar extends React.Component {
     });
   }
 
-
-
-
   render() {
     const show = (this.state.isOpen)? "show" : "";
   return (
 
-    <MDBNavbar expand="lg" light bgColor="light">
-      <MDBContainer fluid>
+    <MDBNavbar expand="lg" light bgColor="light" className="navBar" >
+      <MDBContainer fluid className="navBarContainer">
         <MDBNavbarBrand href="/" > <img src={ logo } alt="Logo" className="logoImg" /></MDBNavbarBrand>
         <MDBNavbarToggler
           aria-expanded="false"
@@ -45,14 +41,18 @@ export default class NavBar extends React.Component {
           <MDBIcon icon="bars" fas />
         </MDBNavbarToggler>
         {/* <MDBCollapse navbar isOpen={this.state.isOpen}> */}
-          <MDBNavbarNav className={"shomabde"+show}>
+          <MDBNavbarNav className={"shomabde"+show} >
             
+          <div className="collapse navbar-collapse justify-content-center">
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/profile" className="nav-link">Profile</Link>
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
-            <input className="form-control" placeholder="Type query" aria-label="Search" type="Search"/>
-            <MDBBtn outline>Search</MDBBtn>
+            </div>
+            
+            {/* <input className="form-control" placeholder="Type query" aria-label="Search" type="Search"/>
+            <MDBBtn outline>Search</MDBBtn> */}
+
             <Link to="/cart" className="nav-link" > <MDBIcon fas icon="shopping-cart"/> </Link>
 
           </MDBNavbarNav>

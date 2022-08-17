@@ -107,19 +107,21 @@ const About = () => {
            <Card.Img
              variant="top"
              src="https://eunimart.com/wp-content/uploads/2021/10/Guide-on-selling.jpeg"
-             style={{ width: "700px" }} />  
+             style={{ width: "100%" }} />  
           
           </Card.Link>
           </Col> 
           
            <Card className="csddd" style={{ width: "40%"}} >
-          <Col className="aboutText">
-          <Card.Body className="aboutText" style={{ width: "700px"}}>  
-            <Card.Text  >
+          <Col >
+          
+          <Card.Body className="aboutText " style={{ width: "100%", height:"50%" }}>  
+            <Card.Text  style={{ width: "100%", height:"100%" }}>
             We are a team of passionate developers interested in web developing and many other social, economical, political and artistic issues so we try to find solutions and help the community by creating some useful, creative apps.
             <hr/>
             Our Application idea is to create an application where small businesses and upcoming individuals can share their story/products/creations/items
-             (all the items must be locally handmade to support small businesses only) in one platform.            </Card.Text>
+             (all the items must be locally handmade to support small businesses only) in one platform.           
+            </Card.Text>
           </Card.Body>
           </Col>
         </Card>

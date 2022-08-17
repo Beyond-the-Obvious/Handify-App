@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Card from "react-bootstrap/Card";
 import ProductCardHome from './ProductCardHome';
 
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import axios from "axios";
 
 import "../css/homePage.css";
@@ -40,7 +40,12 @@ class ProductModal extends React.Component {
 
   createCart = async (e) => {
     e.preventDefault();
-    swal("Item Added!","", "success");
+    Swal.fire({
+      icon: 'success',
+      title: `Item Added!`,
+      text: `Check your cart!`,
+      confirmButtonColor: "#7D9D9C",
+  });
     const newCart = {
       title: this.props.itemData.title,
       description: this.props.itemData.description,

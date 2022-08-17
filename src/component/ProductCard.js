@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
 import EditItemModal from "./EditItem";
 import Button from "react-bootstrap/Button";
 import "../css/homePage.css";

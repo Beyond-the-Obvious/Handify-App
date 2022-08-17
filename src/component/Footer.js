@@ -10,15 +10,22 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 import logo from '../assets/newlogo.png';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2'
+
 
 
 export default class Footer extends React.Component {
 
   onClick = (e) => {
     e.preventDefault();
-    swal("Thank you for subscribing! ", "Now you can keep up with us🤩");
+    Swal.fire({
+      icon: 'success',
+      title: `Thank you for subscribing!`,
+      text: `Now you can keep up with us🤩`,
+      confirmButtonColor: "#7D9D9C",
+  });
   }
+
 
   render() {
   return (
@@ -51,12 +58,13 @@ export default class Footer extends React.Component {
     </MDBFooter>
     <hr></hr>
 
-            <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <img src={ logo } alt="Logo" className="logoImg" />
+    <div className="footerItems">
+            <MDBCol md="2" lg="2" xl="4" className="mx-auto mb-4 footerlogotext">
+              <img src={ logo } alt="Logo" className="footerLogo" />
               <p>Our website is a perfect place to support small buisness owners and provide the users with unique hand-made peices .</p>
             </MDBCol>
-
-            <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
+            
+            <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4 ">
               <h6 className="text-uppercase fw-bold mb-4">Provided products</h6>
               <p>Food items</p>
               <p>Accessories</p>
@@ -64,21 +72,20 @@ export default class Footer extends React.Component {
             
             </MDBCol>
 
-            <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
+            <MDBCol md="" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
               <p><a href="/About" className="text-reset">About us</a></p>
               <p><a href="/contact" className="text-reset">Contact us</a></p>
               <p><a href="/Profile" className="text-reset">Profile</a></p>
-              {/* <p><a href="/Home" className="text-reset">Home</a></p> */}
             </MDBCol>
 
-            <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
+            <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-              <p><MDBIcon icon="home" className="me-2" />Amman,Jordan</p>
+              <p><MDBIcon icon="home" className="me-2" />Amman, Jordan</p>
               <p><MDBIcon icon="envelope" className="me-3" />info@handify.com</p>
-              <p><MDBIcon icon="phone" className="me-3" /> + 96279 345 567 8</p>
-              {/* <p><MDBIcon icon="print" className="me-3" /> + 96278 234 674 8</p> */}
+              <p><MDBIcon icon="phone" className="me-3" /> + 96279 345 5678</p>
             </MDBCol>
+            </div>
 
           </MDBRow>
 

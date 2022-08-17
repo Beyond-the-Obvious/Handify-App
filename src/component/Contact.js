@@ -3,32 +3,43 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import swal from 'sweetalert';
-import map from '../assets/maps.png';
+import Swal from 'sweetalert2'
 import "../css/contact.css";
-import handifylogo from '../assets/handifylogo.png';
+import { AddressMap } from './AddressMap';
+
+import contactus from '../assets/contact4.jpg';
+
 
 class Contact extends Component {
 
   onClick = (e) => {
     e.preventDefault();
-    swal("Success!", "Your message has been sent!", "success");
+    Swal.fire({
+      icon: 'success',
+      title: `Message Sent!`,
+      text: `Thank you for reaching out!`,
+      confirmButtonColor: "#7D9D9C",
+  });
   }
 
   render() {
     return (
-      <>
+      <div className="contact">
+
+        <img src={ contactus } alt="contactus" className="contactUsImg" />
+
         <div className="contactContainer">
           <h1 className='contactHeader'> Share your Thoughts Here!</h1>
           <div className="pb-5 d-flex justify-content-around align-items-center gap-5 contactBodyContainer" >
-            <Form className='contactForm shadow-lg  bg-white rounded'>
+            <Form className='contactForm shadow-lg'>
 
               <Row className="mb-3">
                 <Col>
                   <Form.Label>First name</Form.Label>
                   <Form.Control placeholder='Enter your first name' />
                 </Col>
-
+                </Row>
+                <Row className="mb-3">
                 <Col>
                   <Form.Label>Last name</Form.Label>
                   <Form.Control placeholder='Enter your last name' />
@@ -44,20 +55,20 @@ class Contact extends Component {
 
               <Form.Group className="mb-3" controlId="formGridAddress1" >
                 <Form.Label>Message</Form.Label>
-                <Form.Control placeholder='Enter your message here' as="textarea" rows={3} />
+                <Form.Control placeholder='Enter your message here' as="textarea" rows={4} />
               </Form.Group>
               <div className='d-flex justify-content-between'>
               <Button className="cartBtn" onClick={this.onClick} variant="primary" type="submit">Submit</Button>
-              <img src={handifylogo} alt="Logo" className='contactLogoImg'/>
               </div>
                 
 
             </Form>
-          <img src={map} alt="Location map" className='mapImg shadow-lg  bg-white rounded' />
+
+          <AddressMap />
+    
           </div>
         </div>
-
-      </>
+      </div>
     );
   }
 }
