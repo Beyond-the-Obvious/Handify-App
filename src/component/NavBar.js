@@ -6,7 +6,6 @@ import {
   MDBNavbarBrand,
   MDBNavbarToggler,
   MDBNavbarNav,
-  MDBNavbarLink,
   MDBIcon,
   // MDBCollapse,
   MDBBtn,
@@ -15,7 +14,24 @@ import logo from '../assets/newlogo.png';
 
 export default class NavBar extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  toggleCollapse() {
+    this.setState({ 
+      isOpen: !this.state.isOpen 
+    });
+  }
+
+
+
+
   render() {
+    const show = (this.state.isOpen)? "show" : "";
   return (
 
     <MDBNavbar expand="lg" light bgColor="light">
@@ -29,28 +45,15 @@ export default class NavBar extends React.Component {
           <MDBIcon icon="bars" fas />
         </MDBNavbarToggler>
         {/* <MDBCollapse navbar isOpen={this.state.isOpen}> */}
-          <MDBNavbarNav>
+          <MDBNavbarNav className={"shomabde"+show}>
             
             <Link to="/" className="nav-link">Home</Link>
-            {/* <Link to="/Login" className="nav-link">Login</Link> */}
-            {/* <Link to="/signup" className="nav-link">SignUp</Link> */}
             <Link to="/profile" className="nav-link">Profile</Link>
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
-            <Link to="/cart" className="nav-link">Cart</Link>
-
-           
- 
-            <MDBNavbarLink></MDBNavbarLink>
-            <input
-              className="form-control"
-              placeholder="Type query"
-              aria-label="Search"
-              type="Search"
-            />
+            <input className="form-control" placeholder="Type query" aria-label="Search" type="Search"/>
             <MDBBtn outline>Search</MDBBtn>
-
-            {/* <MDBNavbarLink href="/cart" className="me-4 text-reset"><MDBIcon fas icon="shopping-cart" /></MDBNavbarLink>   */}
+            <Link to="/cart" className="nav-link" > <MDBIcon fas icon="shopping-cart"/> </Link>
 
           </MDBNavbarNav>
         {/* </MDBCollapse> */}
