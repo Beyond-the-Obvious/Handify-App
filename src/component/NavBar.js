@@ -37,6 +37,8 @@ export default class NavBar extends React.Component {
             <Link to="/profile" className="nav-link">Profile</Link>
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
+            <Link to="/cart" className="nav-link">Cart</Link>
+
            
  
             <MDBNavbarLink></MDBNavbarLink>
@@ -48,7 +50,8 @@ export default class NavBar extends React.Component {
             />
             <MDBBtn outline>Search</MDBBtn>
 
-            <MDBNavbarLink href="/cart" className="me-4 text-reset"><MDBIcon fas icon="shopping-cart" /></MDBNavbarLink>            
+            {/* <MDBNavbarLink href="/cart" className="me-4 text-reset"><MDBIcon fas icon="shopping-cart" /></MDBNavbarLink>   */}
+
           </MDBNavbarNav>
         {/* </MDBCollapse> */}
 
