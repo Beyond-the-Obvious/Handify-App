@@ -37,7 +37,6 @@ function App() {
           <Route exact path="/cart" element={<Cart />}></Route>
 
         </Routes>
-
           <Description />
           <Footer />
       </Router>

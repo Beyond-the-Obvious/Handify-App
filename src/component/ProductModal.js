@@ -55,7 +55,7 @@ class ProductModal extends React.Component {
         render() {
           
         return(
-            <div className="productsCards mb-5">
+            <div className="">
 
             <ProductCardHome itemData={this.props.itemData} getProduct={this.props.getProduct} createCart={this.createCart} showModal={() => this.openModal()}/>
       
@@ -74,7 +74,7 @@ class ProductModal extends React.Component {
             <Card.Text style={{ color: "black" }}>
               {this.props.itemData.price} JD
             </Card.Text>
-            <Button variant="secondary" onClick={(e) => this.closeModal(e)}>
+            <Button className="cartBtn" variant="secondary" onClick={(e) => this.closeModal(e)}>
                   Close
                 </Button>
 

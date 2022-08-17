@@ -72,7 +72,7 @@ export default class HomePage extends React.Component {
         </div>
         <div className="test">
           <hr className="hr" />
-          <h1 className="sectionHeader mb-3">Our recent added products</h1>
+          <h1 className="sectionHeader  mb-3">Our recent added products</h1>
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -84,7 +84,7 @@ export default class HomePage extends React.Component {
             }}
             navigation={true}
             modules={[Pagination, Navigation]}
-            className="mySwiper"
+            className="mySwiper "
           >
             {this.state.swiperArray.map((item) => {
 
@@ -94,7 +94,7 @@ export default class HomePage extends React.Component {
           <hr className="hr mb-0 mt-5" />
           <div className="sectionTwo">
             <div className="serviceContainter">
-              <h2 className="pt-4 pb-5"> Our Services </h2>
+              <h2 className="pt-4 pb-6"> Our Services </h2>
               <div className="d-flex justify-content-between">
                 <div className="d-flex flex-column justify-content-center align-items-center oneServiceContainer">
                   <img src={salesImg} alt="salesImg" className="serviceImg" />
@@ -136,7 +136,7 @@ export default class HomePage extends React.Component {
             </div>
         <div className="productsContainer">
           {this.state.handify.map((item, idx) => (
-            <div className="productsCards mb-5" key={idx}>
+            <div  key={idx}>
               <ProductModal itemData={item} getProduct={this.getProduct} createCart={this.createCart} />
             </div>
           ))}

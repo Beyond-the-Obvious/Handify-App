@@ -4,6 +4,8 @@ import ProductCard from "./ProductCard";
 import AddItemForm from "./AddItemForm";
 import Button from "react-bootstrap/Button";
 
+import "../css/homePage.css";
+
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -79,28 +81,6 @@ class Profile extends React.Component {
     console.log(this.state.userInfo._id);
   };
 
-
-  // // admin functions
-  // getUser = async () => {
-  //   const res = await axios.get(`${process.env.REACT_APP_HEROKU}/login`);
-  //   this.setState({
-  //     userInfo: res.data,
-  //   });
-  // };
-
-  // updateUser = async (e) => {
-  //   e.preventDefault();
-  //   const id = this.userInfo._id;
-  //   const data = {
-  //     name: e.target.userName.value,
-  //     email: e.target.userEmail.value,
-  //     password: e.target.userPassword.value,
-  //   };
-  //   await axios.put(`${process.env.REACT_APP_HEROKU}/login/${id}`, { data });
-  //   this.getUser();
-  //   console.log(this.state.userInfo);
-  // };
-
   setLoginUser = async () => {
     this.props.setLoginUser();
   };
@@ -112,78 +92,21 @@ class Profile extends React.Component {
     return (
       <div className="login-body">
         <section className="row text-secondary my-3">
-          {/* <div className="col-md-4">
-            <h3 className="text-center text-uppercase">Profile</h3>
-
-            <div className="avatar">
-              <img
-                src="https://res.cloudinary.com/unlimatedartt/image/upload/v1654270494/blank-profile-picture-973460_640_yqplrx.png"
-                alt="avatar"
-                width={200}
-                height={200}
-              />
-              <span>
-                <p>
-                  <i className="fas fa-camera"></i>Change
-                </p>
-                <input type="file" name="file" id="file_up" accept="image/*" />
-              </span>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                name="name"
-                className="form-control"
-                placeholder="Your name"
-                id="userName"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                name="email"
-                className="form-control"
-                id="userEmail"
-                disabled={true}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="password">New Password</label>
-              <input
-                type="password"
-                name="password"
-                className="form-control"
-                placeholder="Your new password"
-                id="userPassword"
-              />
-            </div>
-
-            <button className="btn btn-info" onSubmit={this.updateUser}>
-              Update
-            </button>
-          </div> */}
-
           
-
           <div className="product">
             <>
               <h1 className="contactTxt">My Products</h1>
-
-              <AddItemForm submitHandler={this.createProduct} />
-
-              
-
+                <div className="profileButtons">
+                  <AddItemForm submitHandler={this.createProduct} />
+                  <Button className="cartBtn" onClick={this.setLoginUser}>Logout</Button>
+                </div>
+                <div className="">
               <ProductCard
                 deleteProduct={this.deleteProduct}
                 itemData={this.state.handify}
                 getProduct={this.getProduct}
               />
-              <Button className="cartBtn" onClick={this.setLoginUser}>Logout</Button>
+              </div>
             </>
           </div>
         </section>

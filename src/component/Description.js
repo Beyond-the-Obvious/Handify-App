@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/description.css";
+import "../css/homePage.css";
 
 export default class Description extends React.Component {
 
@@ -8,8 +9,8 @@ export default class Description extends React.Component {
         return (
             <div className="para">
             <div className="text-center">
-            <h5>About our website</h5>
-            <p>Our website is a perfect place to support small buisness owners and provide the users with unique hand-made peices .</p>
+            <h3>About Our Website</h3>
+            <p>Our website is a perfect place to support small buisness owners and provide the users with unique hand-made pieces</p>
 
             </div>
        </div>
