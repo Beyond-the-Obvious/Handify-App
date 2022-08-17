@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { BsKeyFill } from "react-icons/bs"
 import { MdEmail } from "react-icons/md"
 import "../css/loginNew.css"
+import Swal from 'sweetalert2'
 
 const Login = ({ setLoginUser }) => {
 
@@ -25,10 +26,31 @@ const Login = ({ setLoginUser }) => {
     const login = () => {
         axios.post(`${process.env.REACT_APP_HEROKU}/login`, user)
             .then(res => {
-                // alert(res.data.message)
-                setLoginUser(res.data.user)
-                console.log("res.data.user", res.data.user);
-                navigate("/profile")
+                if (res.data.message === "Login Successfull") {
+                    Swal.fire({
+                        icon: 'success',
+                        title: `${res.data.message}`,
+                        text: `Welcome ${res.data.user.name}`,
+                        confirmButtonColor: "#7D9D9C",
+                    });
+                    setLoginUser(res.data.user)
+                    navigate("/profile")
+                } else if  (res.data.message === "Password didn't match"){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Password is incorrect!',
+                        footer: 'Forgot your password? <a href="/contact">Click here</a>',
+                        confirmButtonColor: "#DD6B55",
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'User is not Registered!',
+                        text: 'Please check your email and password!',
+                        confirmButtonColor: "#DD6B55"
+                        })
+                }
             })
     }
 

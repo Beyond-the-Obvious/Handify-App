@@ -5,7 +5,7 @@ import About from "./component/About";
 import NavBar from "./component/NavBar";
 import Contact from  "./component/Contact";
 import Cart from "./component/Cart";
-import Description from "./component/Description";
+// import Description from "./component/Description";
 import Homepage from "./component/HomePage"
 import Log from "./component/login"
 import Register from "./component/register"
@@ -13,6 +13,8 @@ import Register from "./component/register"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
 
 function App() {
 
@@ -37,7 +39,7 @@ function App() {
           <Route exact path="/cart" element={<Cart />}></Route>
 
         </Routes>
-          <Description />
+          {/* <Description /> */}
           <Footer />
       </Router>
     </div>

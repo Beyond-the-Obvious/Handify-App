@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import "../css/registerNew.css"
+import Swal from 'sweetalert2'
 
 const Register = () => {
 
@@ -27,11 +28,20 @@ const Register = () => {
         if (name && email && password && (password === reEnterPassword)) {
             axios.post(`${process.env.REACT_APP_HEROKU}/register`, user)
                 .then(res => {
-                    alert(res.data.message)
+                    Swal.fire({
+                        icon: 'success',
+                        title: `${res.data.message}`,
+                        confirmButtonColor: "#7D9D9C",
+                        })
                     navigate("/login")
                 })
         } else {
-            alert("invlid input")
+            Swal.fire({
+                icon: 'error',
+                title: 'Invlid Input',
+                text: 'Please check your input!',
+                confirmButtonColor: "#DD6B55",
+            })
         }
 
     }

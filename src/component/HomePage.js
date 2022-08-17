@@ -8,7 +8,7 @@ import timeImg from "../assets/time.svg";
 import   { MDBBtn } from "mdb-react-ui-kit";
 import '../css/homePage.css';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Navigation, Pagination, EffectCoverflow, Controller, Thumbs } from 'swiper'
+import SwiperCore, { Navigation, Pagination } from 'swiper'
 import 'swiper/swiper-bundle.css'
 SwiperCore.use([Navigation]);
 
@@ -48,7 +48,7 @@ export default class HomePage extends React.Component {
         handify: this.state.saveAllData,
       });
     }
-    const { handify, saveAllData } = this.state;
+    const { saveAllData } = this.state;
     const filteredProducts = saveAllData.filter((item) => {
       return item.title.toLowerCase().includes(e.target.value.toLowerCase());
     });
@@ -60,7 +60,6 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <div className="login-body">
-        {console.log(this.state.handify)}
         <div className="coverContainer d-flex justify-content-between align-items-center">
           <div>
             <h1 className="outterWelcoming pt-4 pb-3">Welcome To </h1>
@@ -86,9 +85,9 @@ export default class HomePage extends React.Component {
             modules={[Pagination, Navigation]}
             className="mySwiper "
           >
-            {this.state.swiperArray.map((item) => {
+            {this.state.swiperArray.map((item, idx) => { 
 
-              return <SwiperSlide><img src={item.imgURL} alt="swiperimg" /></SwiperSlide>
+              return <SwiperSlide key={idx}><img src={item.imgURL} alt="swiperimg" /></SwiperSlide>
             })}
           </Swiper>
           <hr className="hr mb-0 mt-5" />
