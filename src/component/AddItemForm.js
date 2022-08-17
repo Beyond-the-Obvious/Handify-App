@@ -28,7 +28,7 @@ handleShow = () => {
       <>
    <div>
 
-    <Button className="cartBtnAdd" variant="primary" onClick={this.handleShow} > Add Item </Button>
+    <Button className="cartBtn" variant="primary" onClick={this.handleShow} > Add Item </Button>
 
                 <Modal show={this.state.show} onHide={this.handleClose} >
 
@@ -74,21 +74,6 @@ handleShow = () => {
 
 
   </div>
-      {/* <form onSubmit={this.props.submitHandler}>
-        <label htmlFor="">item title</label>
-        <input type="text" id="itemTitle" />
-        <br />
-        <label htmlFor="">item description</label>
-        <input type="text" name="" id="itemdes" />
-        <br />
-        <label htmlFor="">item price</label>
-        <input type="text" id="itemPrice" />
-        <br />
-        <label htmlFor="">item img</label>
-        <input type="text" id="itemImg" />
-        <br />
-        <button type="submit">Save</button>
-      </form> */}
       </>
     );
   }

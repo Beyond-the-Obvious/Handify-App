@@ -30,13 +30,13 @@ export default class ProductCardHome extends Component {
 
   render() {
     return (
-      <div className="productsCards mb-5">
+      <div className="" >
     
-        <Card className="productsCards mb-5">
+        <Card className="allcard">
 
           <Card.Img className="cardImg" src={this.props.itemData.imgURL} onClick={this.props.showModal}/>
 
-          <Card.Body className="cardBody" >
+          <Card.Body className="allcardbody" >
             <Card.Title >{this.props.itemData.title}</Card.Title>
             <Card.Text >{this.props.itemData.description}</Card.Text>
             <Card.Text >{this.props.itemData.price} JD</Card.Text>
