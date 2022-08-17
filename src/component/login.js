@@ -25,10 +25,10 @@ const Login = ({ setLoginUser }) => {
     const login = () => {
         axios.post(`${process.env.REACT_APP_HEROKU}/login`, user)
             .then(res => {
-                alert(res.data.message)
+                // alert(res.data.message)
                 setLoginUser(res.data.user)
                 console.log("res.data.user", res.data.user);
-                navigate("/")
+                navigate("/profile")
             })
     }
 
