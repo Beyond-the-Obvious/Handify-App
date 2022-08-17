@@ -11,6 +11,7 @@ import {
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
+import "../css/cart.css";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -42,19 +43,19 @@ export default class Cart extends Component {
 
   render() {
     return (
-      <div>
+      <div className="cart-body">
         <div className=" text-center ">
-          <MDBTypography tag="h3" className="fw-normal mb-5 text-black">
+          <MDBTypography tag="h3" className=" fw-normal mb-5  cartTitle" >
             Shopping Cart
           </MDBTypography>
         </div>
 
         {this.state.cart.map((item, idx) => (
-          <MDBContainer className="h-10" key={idx}>
-            <MDBRow className="justify-content-center align-items-center h-10">
-              <MDBCol md="10">
-                <MDBCard className="rounded-3 mb-4">
-                  <MDBCardBody className="p-4">
+          <MDBContainer className="h-10 " key={idx}>
+            <MDBRow className="justify-content-center align-items-center h-10 ">
+              <MDBCol md="10" >
+                <MDBCard className="rounded-3 mb-4 cartItem">
+                  <MDBCardBody className="p-4 box cartCart">
                     <MDBRow className="justify-content-between align-items-center">
                       <MDBCol md="2" lg="2" xl="2">
                         <MDBCardImage
@@ -74,18 +75,18 @@ export default class Cart extends Component {
                         xl="2"
                         className="d-flex align-items-center justify-content-around"
                       >
-                        <MDBBtn color="link" className="px-2">
-                          <MDBIcon fas icon="minus" />
+                        <MDBBtn color="Beige" className="px-2">
+                          <MDBIcon fas icon="minus" color="black" />
                         </MDBBtn>
 
                         {/* <MDBInput min={0} defaultValue={2} type="number" size="sm" /> */}
 
-                        <MDBBtn color="link" className="px-2">
-                          <MDBIcon fas icon="plus" />
+                        <MDBBtn color="#F0EBE3" className="px-2">
+                          <MDBIcon fas icon="plus" color="black" />
                         </MDBBtn>
                       </MDBCol>
                       <MDBCol md="3" lg="2" xl="2" className="offset-lg-1">
-                        <MDBTypography tag="h5" className="mb-0">
+                        <MDBTypography tag="h5" className="mb-0" >
                           <p>{item.price} JD</p>
                         </MDBTypography>
                       </MDBCol>
@@ -95,6 +96,7 @@ export default class Cart extends Component {
                             fas
                             icon="trash text-danger"
                             size="lg"
+                            color="black"
                             onClick={() => this.deleteCart(item._id)}
                           />
                         </a>
@@ -106,7 +108,7 @@ export default class Cart extends Component {
             </MDBRow>
           </MDBContainer>
         ))}
-        <MDBCard className="mb-1">
+        {/* <MDBCard className="mb-1">
           <MDBCardBody className="p-4 d-flex flex-row">
             <MDBBtn
               outline
@@ -116,7 +118,7 @@ export default class Cart extends Component {
               Purchase
             </MDBBtn>
           </MDBCardBody>
-        </MDBCard>
+        </MDBCard> */}
       </div>
     );
   }
