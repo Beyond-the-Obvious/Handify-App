@@ -14,3 +14,4 @@ Our Application idea is to create an application where small businesses and upco
 # Presentation #
 
 [Presentation Link](https://docs.google.com/presentation/d/1cgw91gsm0qrtlszBNoNFHQpgezaBNBD4eTJ_-zvhq9k/edit?usp=sharing)
+# Handify-App
